@@ -9,7 +9,7 @@ const resolvers = {
         thought: async (parent, { _id }) => {
             return Thought.findOne({ _id });
         },
-// get all users
+        // get all users
         users: async () => {
             return User.find()
             .select('-__v -password')
@@ -23,7 +23,17 @@ const resolvers = {
             .populate('friends')
             .populate('thoughts');
         },        
-    }
+    },
+    Mutation: {
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
+
+            return user;    
+        },
+        login: async () => {
+    
+        }
+    }    
 }
   
 module.exports = resolvers;
