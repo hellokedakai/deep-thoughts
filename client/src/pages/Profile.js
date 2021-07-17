@@ -11,6 +11,8 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
+import ThoughtForm from '../components/ThoughtForm';
+
 
 
 
@@ -54,7 +56,7 @@ const Profile = () => {
             Add Friend
           </button>
         )}
-        
+
       </div>
 
       <div className="flex-row justify-space-between mb-3">
@@ -70,6 +72,7 @@ const Profile = () => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
